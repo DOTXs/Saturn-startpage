@@ -1,7 +1,8 @@
+##### Development will be slower from now on, due to uni starting soon and other stuff happening irl. Take care 🖤
 ![Saturn-startpage](https://i.imgur.com/FDO3ufT.png)
 
 ## What's Saturn Startpage?
-Saturn Startpage is a fully open source, community build new-tab replacement **build with speed and user experience in mind**. Saturn was original build for myself but later on I decided to open source it.
+Saturn Startpage is a fully open source, community build new-tab replacement. **Build with speed and user experience in mind**. Saturn was original build for myself but later on I decided to open source it.
 
 ## Features:
 
@@ -28,4 +29,4 @@ Saturn Startpage is a fully open source, community build new-tab replacement **b
 - HTML, CSS & Javascript. [I do have plans to move over to either react or vue sometime later this year] 
 
 ### Saturn status
-- Actively developed/Side Project. But as I'm starting Univercity soon and also learning python, development has slowed down.
+- Actively developed/Side Project.
