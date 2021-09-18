@@ -13,13 +13,6 @@
     "newtab": "index.html"
   },
 
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{aa7b057d-721f-4ed8-ae73-563f767006ee}",
-      "update_url": "https://raw.githubusercontent.com/mraif13/Saturn-startpage/master/updates.json"
-    }
-  },
-
   "permissions": ["storage"],
   "content_security_policy": "script-src 'unsafe-inline'; object-src 'self';"
 }
