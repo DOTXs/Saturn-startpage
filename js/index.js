@@ -138,6 +138,24 @@ $(function () {
   });
 });
 
+$(function () {
+  var status = localStorage.getItem("apps_hidden");
+  if (status == "true") {
+    $(".apps_list").css("display", "none");
+    $(".hide-apps-list").attr("checked", true);
+  } else {
+    $(".apps_list").css("display", "block");
+    $(".hide-apps-list").attr("checked", false);
+  }
+  $(".hide-apps-list").click(function () {
+    if (this.checked) {
+      $(".apps_list").hide();
+    } else {
+      $(".apps_list").show();
+    }
+    localStorage.setItem("hide-apps-list", this.checked);
+  });
+});
 //
 // ========
 // + Settings navigation +
@@ -171,7 +189,7 @@ $(document).ready(function () {
     $("#" + tab_id).addClass("current");
   });
 });
-
+//
 //
 // ========
 // + Saturn's theme engine v2.0-m&ms +
@@ -182,7 +200,9 @@ const darkButton = document.getElementById("dark");
 const lightButton = document.getElementById("light");
 const spaceButton = document.getElementById("space");
 const linkinParkButton = document.getElementById("linkin-park");
-const dracula_themeButton = document.getElementById("dracula_theme");
+const lighterdark_theme_button = document.getElementById("lighterdarktheme");
+const draculaButton = document.getElementById("dracula");
+const nordButton = document.getElementById("nord");
 const body = document.body;
 
 // Apply the cached theme on reload
@@ -199,7 +219,9 @@ darkButton.onclick = () => {
   body.classList.replace("light", "dark");
   body.classList.replace("space", "dark");
   body.classList.replace("linkin-park", "dark");
-  body.classList.replace("dracula_theme", "dark");
+  body.classList.replace("lighterdarktheme", "dark");
+  body.classList.replace("dracula", "dark");
+  body.classList.replace("nord", "dark");
   localStorage.setItem("theme", "dark");
 };
 
@@ -209,7 +231,9 @@ lightButton.onclick = () => {
   body.classList.replace("dark", "light");
   body.classList.replace("space", "light");
   body.classList.replace("linkin-park", "light");
-  body.classList.replace("dracula_theme", "light");
+  body.classList.replace("lighterdarktheme", "light");
+  body.classList.replace("dracula", "light");
+  body.classList.replace("nord", "light");
   localStorage.setItem("theme", "light");
 };
 
@@ -219,7 +243,9 @@ spaceButton.onclick = () => {
   body.classList.replace("dark", "space");
   body.classList.replace("light", "space");
   body.classList.replace("linkin-park", "space");
-  body.classList.replace("dracula_theme", "space");
+  body.classList.replace("lighterdarktheme", "space");
+  body.classList.replace("dracula", "space");
+  body.classList.replace("nord", "space");
   localStorage.setItem("theme", "space");
 };
 
@@ -228,18 +254,42 @@ linkinParkButton.onclick = () => {
   body.classList.replace("dark", "linkin-park");
   body.classList.replace("light", "linkin-park");
   body.classList.replace("space", "linkin-park");
-  body.classList.replace("dracula_theme", "linkin-park");
+  body.classList.replace("lighterdarktheme", "linkin-park");
+  body.classList.replace("dracula", "linkin-park");
+  body.classList.replace("nord", "linkin-park");
   localStorage.setItem("theme", "linkin-park");
 };
 
-// Dracula theme
+// Lighter Grey ish theme theme
 
-dracula_themeButton.onclick = () => {
-  body.classList.replace("dark", "dracula_theme");
-  body.classList.replace("light", "dracula_theme");
-  body.classList.replace("space", "dracula_theme");
-  body.classList.replace("linkin-park", "dracula_theme");
-  localStorage.setItem("theme", "dracula_theme");
+lighterdark_theme_button.onclick = () => {
+  body.classList.replace("dark", "lighterdarktheme");
+  body.classList.replace("light", "lighterdarktheme");
+  body.classList.replace("space", "lighterdarktheme");
+  body.classList.replace("linkin-park", "lighterdarktheme");
+  body.classList.replace("dracula", "lighterdarktheme");
+  body.classList.replace("nord", "lighterdarktheme");
+  localStorage.setItem("theme", "lighterdarktheme");
+};
+
+draculaButton.onclick = () => {
+  body.classList.replace("dark", "dracula");
+  body.classList.replace("light", "dracula");
+  body.classList.replace("linkin-park", "dracula");
+  body.classList.replace("lighterdarktheme", "dracula");
+  body.classList.replace("space", "dracula");
+  body.classList.replace("nord", "dracula");
+  localStorage.setItem("theme", "dracula");
+};
+
+nordButton.onclick = () => {
+  body.classList.replace("dark", "nord");
+  body.classList.replace("light", "nord");
+  body.classList.replace("space", "nord");
+  body.classList.replace("linkin-park", "nord");
+  body.classList.replace("lighterdarktheme", "nord");
+  body.classList.replace("dracula", "nord");
+  localStorage.setItem("theme", "nord");
 };
 
 //
@@ -269,25 +319,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("#save").click(function () {
     $("#sv-msg").text(
-      "( ﾟｏ⌒): Username saved, please reload or open a new tab for these changes to take effect. "
+      "🔔 Your username has been saved. Please reload or open a new tab to see the changes. "
     );
   });
 });
-
-//
-// ========
-// + More apps overlay stuff (This handles the very simple height
-// animation when the user presses on the button.)  +
-// ========
-//
-
-navy.addEventListener("click", openNav);
-navyclose.addEventListener("click", closeNav);
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-}

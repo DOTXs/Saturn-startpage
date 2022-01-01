@@ -1,5 +1,3 @@
-<!-- What are you looking for? Easter Eggs ()  -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,24 +6,25 @@
     <title>New Tab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="css/var.css" />
+    <!-- All the CSS needed to make Saturn Work -->
+    <link rel="stylesheet" href="css/core.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/anim.min.css" />
+    <link rel="stylesheet" href="css/anim.css" />
     <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/themes.css" />
     <link rel="stylesheet" href="icons/css/line-awesome.min.css" />
     <script src="js/jquery.js"></script>
   </head>
   <body class="light">
     <p class="gudmorning" id="greetings"></p>
     <p class="time" id="time"></p>
-
     <main>
       <div class="full">
         <div class="search_block">
           <form
             id="search_eng_form"
             method="get"
-            action="https://www.google.com/"
+            action="https://www.google.com/search"
           >
             <a
               href="javascript:void(0)"
@@ -53,159 +52,45 @@
         </div>
       </div>
 
-      <button class="setting-button" id="trigger" title="Settings">
+      <button
+        class="setting-button"
+        id="trigger"
+        title="Click to open Settings"
+      >
         <i class="las la-cog"></i>
       </button>
 
       <!-- App lists + App category -->
-      <h5 class="section-title new">
-        <i class="las la-grip-horizontal"></i> Apps list
-      </h5>
-      <ul class="apps-category">
-        <li class="tab-link current" data-tab="app-1">
-          <i class="las la-heart"></i> Most used
-        </li>
-        <li class="tab-link" data-tab="app-2">
-          <i class="las la-book-reader"></i> Study
-        </li>
-        <li class="tab-link" data-tab="app-3">
-          <i class="las la-users"></i> Social
-        </li>
-        <li class="tab-link" data-tab="app-4">
-          <i class="las la-photo-video"></i> Media
-        </li>
-        <li class="tab-link" id="navy" title="More apps">
-          <i class="lab la-buromobelexperte"></i>
-        </li>
-      </ul>
-
-      <div id="app-1" class="app-content current slide-up-fade-in">
-        <div class="popup">
-          <div id="apps">
-            <a href="https://github.com">
-              <div class="app">
-                <i class="lab la-github"></i>
-                <span>Github</span>
-              </div></a
-            >
-            <a href="https://youtube.com">
-              <div class="app">
-                <span>YouTube</span>
-                <i class="lab la-youtube"></i></div
-            ></a>
-            <a href="https://reddit.com">
-              <div class="app">
-                <span>Reddit</span>
-                <i class="lab la-reddit"></i></div
-            ></a>
-            <a href="https://mail.protonmail.com">
-              <div class="app">
-                <span>Proton Mail </span>
-                <i class="las la-inbox"></i></div
-            ></a>
-
-            <a href="https://mail.google.com">
-              <div class="app">
-                <span>Gmail</span>
-                <i class="las la-envelope"></i></div
-            ></a>
-          </div>
-        </div>
-      </div>
-
-      <div id="app-2" class="app-content slide-up-fade-in">
-        <div class="popup">
-          <div id="apps">
-            <a href="https://udemy.com">
-              <div class="app">
-                <i class="las la-chalkboard-teacher"></i>
-                <span>Udemy</span>
-              </div></a
-            >
-            <!-- <a href="http://moodle.rbs.ac.mu/moodle/">
-              <div class="app">
-                <i class="las la-file-alt"></i>
-                <span>Rushm.. Moodle</span>
-              </div></a
-            > -->
-            <a href="https://learn-anything.xyz/">
-              <div class="app">
-                <i class="lar la-map"></i>
-                <span>Learn Anything</span>
-              </div></a
-            >
-            <a href="https://docs.google.com">
-              <div class="app">
-                <i class="las la-file-alt"></i>
-                <span>Google Docs</span>
-              </div></a
-            >
-            <a href="https://www.litcharts.com/">
-              <div class="app">
-                <i class="las la-book"></i>
-                <span>Litcharts</span>
-              </div></a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div id="app-3" class="app-content slide-up-fade-in">
-        <div class="popup">
-          <div class="popup">
-            <div id="apps">
-              <a href="https://instagram.com">
-                <div class="app">
-                  <i class="lab la-instagram"></i>
-                  <span>Instagr..</span>
-                </div></a
-              >
-              <a href="https://twitter.com">
-                <div class="app">
-                  <i class="lab la-twitter"></i>
-                  <span>Twitter</span>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="app-4" class="app-content slide-up-fade-in">
-        <div class="popup">
-          <div class="popup">
-            <div class="popup">
-              <div id="apps">
-                <a href="https://youtube.com">
-                  <div class="app">
-                    <i class="lab la-youtube"></i>
-                    <span>YouTube</span>
-                  </div></a
-                >
-                <a href="https://netflix.com">
-                  <div class="app">
-                    <i class="las la-film"></i>
-                    <span>Netflix</span>
-                  </div></a
-                >
-                <a href="https://twitch.tv">
-                  <div class="app">
-                    <i class="lab la-twitch"></i>
-                    <span>Twitch</span>
-                  </div></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="apps_list">
+        <h4 class="section-title new">
+          <i class="las la-grip-horizontal"></i> Apps list
+        </h4>
+        <ul class="apps-category">
+          <li class="tab-link current" data-tab="app-1">
+            <i class="lab la-gratipay"></i> Most used
+          </li>
+          <li class="tab-link" data-tab="app-2">
+            <i class="las la-book-reader"></i> Study
+          </li>
+          <li class="tab-link" data-tab="app-3">
+            <i class="las la-share-alt"></i> Social
+          </li>
+          <li class="tab-link" data-tab="app-4">
+            <i class="las la-photo-video"></i> Media
+          </li>
+        </ul>
+        <div id="apps_list"></div>
+        <!-- Find everything inside render.js-->
       </div>
 
       <br />
       <!-- End of app list -->
 
-      <!-- Favorite Feature 2.1 -->
+      <!-- Favorite v3.0 -->
       <div id="fav-container" class="fav-container">
-        <h5 class="section-title"><i class="las la-bookmark"></i> Favorites</h5>
+        <h4 class="section-title">
+          <i class="las la-swatchbook"></i> Favorites
+        </h4>
         <br />
         <div class="favorites-search">
           <input
@@ -217,49 +102,85 @@
         <div id="content">
           <div id="sortSupport">
             <ul id="fav-link"></ul>
-            <div id="new-link-button">
-              <button><i class="las la-plus"></i> Add favorite</button>
+            <div id="favBtn" class="fav-btn">
+              <button><i class="las la-plus-circle"></i> Add favorite</button>
             </div>
           </div>
         </div>
 
-        <!-- Add new link page -->
-        <div id="add-link-form">
-          <div id="new-close-fav">
-            <span class="new-close-fav"
-              ><i class="las la-times-circle"></i
-            ></span>
-          </div>
-          <label><i class="las la-heading"></i> Title or icon</label>
-          <br />
-          <input id="title" placeholder="Site title.." autocomplete="off" />
-
-          <br /><label><i class="las la-link"></i> Url</label><br />
-          <input
-            id="url"
-            placeholder="https://example.org"
-            autocomplete="off"
-          /><br /><button id="add"><i class="lar la-save"></i> Save</button>
-          <h3></h3>
-          <p style="text-align: center"><i class="las la-grip-lines"></i></p>
-          <div class="side-text">
-            <details>
-              <summary>
-                <i class="lar la-question-circle"></i> Need help?
-              </summary>
-              <i class="las la-thumbtack"></i> Learn everything about favorites:
+        <!-- Favorites Modal -->
+        <div id="favModal" class="favModal">
+          <div class="fav-content">
+            <h3 class="fav-title">
+              <i class="las la-plus-circle"></i> Add favorite<span
+                class="settings-dot"
+                >.</span
+              >
+            </h3>
+            <p></p>
+            <label class="fav_title"
+              >Title or
               <a
-                href="https://github.com/mraif13/Saturn-startpage/wiki/Favorites-feature"
+                href="https://github.com/mraif13/Saturn-startpage/wiki/Favorites-feature#how-do-you-add-images"
                 target="_blank"
-                >here <i class="las la-external-link-alt"></i
-              ></a>
-            </details>
+                >Image URL<i class="las la-external-link-alt"></i></a
+            ></label>
+            <br />
+            <input id="title" placeholder="Enter a title" autocomplete="off" />
+            <br />
+            <br />
+            <label class="fav_title"><i class="las la-link"></i> URL</label
+            ><br />
+            <input
+              id="url"
+              placeholder="Type or paste a URL"
+              autocomplete="off"
+            />
+
+            <br />
+            <br />
+            <button id="cancel-fav-btn" class="cancel-fav-btn">
+              <i class="las la-times-circle"></i> Cancel
+            </button>
+            <button
+              id="add"
+              style="background: var(--lighter-color); font-weight: 600"
+              class="save-button"
+            >
+              <i class="lar la-save"></i> Save
+            </button>
+            <h3></h3>
+            <label id="sv-msg2"></label>
+            <p style="text-align: center">
+              <i class="las la-grip-lines"></i>
+            </p>
+            <div class="side-text">
+              <div class="settings-background">
+                <span class="settings-dot"
+                  ><i class="las la-thumbtack"></i
+                ></span>
+                Unlock the full potential of favorites, learn more
+                <a
+                  href="https://github.com/mraif13/Saturn-startpage/wiki/Favorites-feature"
+                  target="_blank"
+                  >here <i class="las la-external-link-alt"></i></a
+                >.
+              </div>
+              <br />
+              <p style="text-align: center; font-weight: 500; font-size: 13px">
+                <a
+                  href="https://github.com/mraif13/Saturn-startpage/issues/new"
+                  target="_blank"
+                  >Report an issue <i class="las la-external-link-alt"></i
+                ></a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- v3.0 Settings -->
-      <div class="modal">
+      <div class="modal" id="openModal">
         <div class="modal-content">
           <span class="close-button"><i class="las la-times-circle"></i></span>
 
@@ -271,28 +192,33 @@
             | Settings<span class="settings-dot">.</span>
           </h3>
           <div class="container">
-            <ul class="tabs">
+            <ul class="tabs" id="tabs">
               <li class="tab-link current" data-tab="tab-2">
                 <i class="las la-cog"></i> General
               </li>
-              <li class="tab-link" data-tab="tab-4">
+              <li class="tab-link" id="tab-link" data-tab="tab-4">
                 <i class="las la-pencil-ruler"></i> Customization
               </li>
               <li class="tab-link" data-tab="tab-3">
                 <i class="las la-info-circle"></i> About
               </li>
+              <p class="line"></p>
+              <li class="tab-link" data-tab="tab-5">
+                <i class="las la-keyboard"></i> K-Shortcuts
+              </li>
             </ul>
             <br />
+
             <div id="tab-2" class="tab-content current slide-up-fade-in">
               <div class="settings-background">
                 <h3><i class="las la-user-edit"></i> Username</h3>
-                <p>Change your username to anything you want.</p>
+                <p>Set your username to anything.</p>
                 <div id="popUp" class="username-section">
                   <input
                     type="text"
                     name="setusername"
                     id="userSet"
-                    placeholder="Jatoro Kujo"
+                    placeholder="Jatoro Kujo.."
                   />
                   <br />
                   <button id="save" class="save-button">
@@ -300,114 +226,64 @@
                   </button>
                 </div>
                 <label id="sv-msg"></label>
-              </div>
-              <br />
-              <div class="settings-background">
+                <br />
                 <h3><i class="las la-eye-slash"></i> Hide things</h3>
                 <p>Hide various elements from the main page.</p>
-                <h5>Hide Favorites completely</h5>
-                <p></p>
-                <label class="slider-switch">
-                  <input type="checkbox" class="hide-favorite" />
-                  <div class="slider round"></div>
-                </label>
-                <br />
-                <h5>Hide Search bar</h5>
-                <p></p>
-                <label class="slider-switch">
-                  <input type="checkbox" class="hide-search" />
-                  <div class="slider round"></div>
-                </label>
-                <br />
+                <details>
+                  <summary><i class="las la-home"></i> Home</summary>
+                  <h5>Hide Favorites</h5>
+                  <p>This will not remove your stored favorites.</p>
+                  <label class="slider-switch">
+                    <input type="checkbox" class="hide-favorite" />
+                    <div class="slider round"></div>
+                  </label>
+                  <br />
+                  <h5>Hide Search bar</h5>
+                  <p></p>
+                  <label class="slider-switch">
+                    <input type="checkbox" class="hide-search" />
+                    <div class="slider round"></div>
+                  </label>
+                  <br />
+                  <h5>Hide Apps list</h5>
+                  <p></p>
+                  <label class="slider-switch">
+                    <input type="checkbox" class="hide-apps-list" />
+                    <div class="slider round"></div>
+                  </label>
+                  <br />
+                </details>
               </div>
               <br />
               <div class="settings-background">
                 <h3><i class="las la-search"></i> Change Search</h3>
                 <p>
-                  Change the search provider by clicking on the icon found in
-                  the search bar.
+                  You can easily change the search provider by clicking on the
+                  search engine icon found in the search bar.
                 </p>
               </div>
-            </div>
-          </div>
-
-          <div id="tab-3" class="tab-content slide-up-fade-in">
-            <div class="settings-background">
-              <h3><i class="las la-info"></i> About</h3>
-              <p>Version, created by & more..</p>
-              <p>
-                Version:
+              <br />
+              <p style="text-align: center; font-weight: 500; font-size: 13px">
                 <a
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  class="easter-egg1"
-                  title="WARNING: PLS DO NOT PRESS THIS LINK!!!!!!!!!! ok thx "
-                  >🪐</a
-                >
-                <a
-                  href="https://github.com/mraif13/Saturn-startpage/releases/tag/v3.0.1"
+                  href="https://github.com/mraif13/Saturn-startpage/issues/new"
                   target="_blank"
-                  >v3.0.1.30-Chromium2.BETA [Milky Way]
-                  <i class="las la-external-link-alt"></i></a
-                ><br />
-                Saturn UI: v3.0.2021
-                <br />
-                Want to help make saturn better?
-                <a
-                  href="https://github.com/mraif13/Saturn-startpage/projects/1"
-                  target="_blank"
-                  >Contribute <i class="las la-external-link-alt"></i
+                  >Report an issue <i class="las la-external-link-alt"></i
                 ></a>
               </p>
-              <div class="socials">
-                <div class="popup">
-                  <div id="apps">
-                    <a href="https://github.com/mraif13/saturn-startpage">
-                      <div class="app">
-                        <i class="las la-code"></i>
-                        <span>Source Code</span>
-                      </div></a
-                    >
-                    <a href="https://github.com/mraif13">
-                      <div class="app">
-                        <i class="lab la-github"></i>
-                        <span>mraif13 Github</span>
-                      </div></a
-                    >
-                    <a
-                      href="https://github.com/mraif13/Saturn-startpage/blob/Chromium/info.md"
-                    >
-                      <div class="app">
-                        <i class="lab la-chrome"></i>
-                        <span>Chrome version</span>
-                      </div></a
-                    >
-                  </div>
-                </div>
-              </div>
-              <h1></h1>
-              <div class="dark-mode-bg5">
-                <h5><i class="lab la-paypal"></i> Support Saturn Startpage</h5>
-                <p>
-                  Saturn Startpage is free and doesn't have any ads, if it has
-                  saved you time or helped you and you'd like to help out,
-                  Here's my
-                  <a
-                    href="https://www.paypal.com/paypalme/raifs"
-                    target="_blank"
-                    >Paypal <i class="las la-external-link-alt"></i
-                  ></a>
-                </p>
-
-                <p>- Thanks! <i class="las la-grin-beam"></i></p>
-              </div>
             </div>
           </div>
+
+          <div id="setting_about"></div>
+
           <div id="tab-4" class="tab-content slide-up-fade-in">
             <div class="settings-background">
-              <h3><i class="las la-palette"></i> Appearance</h3>
-              <p>Choose how Saturn looks to you.</p>
+              <h3><i class="las la-palette"></i> Theme</h3>
+              <p>
+                Personalize Saturn Startpage with themes to match your style,
+                mood, and personality.
+              </p>
 
-              <h5><i class="las la-sun"></i> Light theme</h5>
+              <p class="theme-title"><i class="las la-sun"></i> Light theme</p>
               <a id="light" href="#" class="theme-icon"
                 ><img
                   src="/img/themes/light-theme.png"
@@ -415,179 +291,77 @@
                   alt="light-icon.png"
               /></a>
               <br />
-              <h5><i class="las la-moon"></i> Dark themes</h5>
+              <p class="theme-title"><i class="las la-moon"></i> Dark themes</p>
+              <a id="lighterdarktheme" href="#" class="theme-icon"
+                ><img
+                  src="/img/themes/lighterdark.png"
+                  title="Dark theme"
+                  alt="dark-icon.png"
+              /></a>
+              <a id="dracula" href="#" class="theme-icon"
+                ><img
+                  src="/img/themes/dracula.png"
+                  title="Dracula theme"
+                  alt="dracula-icon.png"
+              /></a>
+              <a id="nord" href="#" class="theme-icon"
+                ><img
+                  src="/img/themes/nord.png"
+                  title="Nord theme"
+                  alt="nord-icon.png"
+              /></a>
+              <p class="theme-title">
+                <i class="las la-cloud-moon"></i> Darker themes
+              </p>
               <a id="dark" href="#" class="theme-icon"
                 ><img
                   src="/img/themes/dark.png"
-                  title="Dark theme"
+                  title="Darker theme"
                   alt="dark-icon.png"
               /></a>
               <a id="space" href="#" class="theme-icon"
                 ><img
                   src="/img/themes/sexy-contrast.png"
-                  title="Sexy Contrast theme"
+                  title="Material-ish Theme"
                   alt="sexy-contrast.png"
               /></a>
+              <p class="theme-title">
+                <i class="las la-flask"></i>
+                <abbr
+                  title="⚠️ Try out new themes coming to saturn in the future, expect bugs and minor UI glitches. "
+                  >Experimental</abbr
+                >
+                theme
+              </p>
               <a id="linkin-park" href="#" class="theme-icon"
                 ><img
                   src="/img/themes/rock-legend.png"
-                  title="RIP Linkin Park"
+                  title="Linkin Park Theme"
                   alt="rock-legend.png"
               /></a>
-              <a id="dracula_theme" href="#" class="theme-icon"
-                ><img
-                  src="/img/themes/dracula-theme.png"
-                  title="dracula theme theme"
-                  alt="dracula-theme.png"
-              /></a>
+            </div>
+          </div>
+
+          <div id="tab-5" class="tab-content slide-up-fade-in">
+            <div class="settings-background">
+              <h2>K-Shortcuts</h2>
+              <p>
+                K-Shortcuts allows you to use your keyboard to do things, saving
+                you time and effort.
+              </p>
+              <h6>Settings shortcuts</h6>
+              <p></p>
+              <kbd>Esc</kbd> &rarr; Open and close settings
             </div>
           </div>
         </div>
       </div>
-
-      <!-- New apps Stable v1.4.1 -->
-      <div id="myNav" class="overlay">
-        <span class="close-button" id="navyclose"
-          ><i class="las la-times-circle"></i
-        ></span>
-        <div class="morecontainer">
-          <div class="overlay-content">
-            <h4>
-              <span class="typewritter_1"
-                >Where to <span class="typewritter_2">next</span>?</span
-              >
-            </h4>
-            <div id="cutieapps">
-              <a href="https://9to5mac.com/">
-                <div class="cuteapps">
-                  <i class="lab la-apple"></i>
-                  <p>9to5mac</p>
-                </div></a
-              >
-              <a href="https://aliexpress.com">
-                <div class="cuteapps">
-                  <i class="las la-shopping-basket"></i>
-                  <p>AliExpress</p>
-                </div></a
-              >
-              <a href="https://dev.to/">
-                <div class="cuteapps">
-                  <i class="lab la-dev"></i>
-                  <p>Dev.to</p>
-                </div></a
-              >
-              <a href="https://devdocs.io/">
-                <div class="cuteapps">
-                  <i class="las la-book"></i>
-                  <p>Dev docs</p>
-                </div></a
-              >
-              <a href="https://orchomenos.github.io/Design-resources/">
-                <div class="cuteapps">
-                  <i class="las la-pencil-ruler"></i>
-                  <p>Design resources</p>
-                </div></a
-              >
-              <a href="https://ebay.com">
-                <div class="cuteapps">
-                  <i class="lab la-ebay"></i>
-                  <p>eBay</p>
-                </div></a
-              >
-              <a href="https://facebook.com">
-                <div class="cuteapps">
-                  <i class="lab la-facebook-square"></i>
-                  <p>Facebook</p>
-                </div></a
-              >
-              <a href="https://freecodecamp.org">
-                <div class="cuteapps">
-                  <i class="lab la-free-code-camp"></i>
-                  <p>Freecodecamp</p>
-                </div></a
-              >
-              <a href="https://maps.google.com">
-                <div class="cuteapps">
-                  <i class="las la-map-marked"></i>
-                  <p>Google Maps</p>
-                </div></a
-              >
-              <a href="https://internetingishard.com/">
-                <div class="cuteapps">
-                  <i class="las la-wifi"></i>
-                  <p>Interneting is hard</p>
-                </div></a
-              >
-              <a href="https://learn-anything.xyz/">
-                <div class="cuteapps">
-                  <i class="las la-map"></i>
-                  <p>Learn anything</p>
-                </div></a
-              >
-              <a href="https://mail.protonmail.com/login">
-                <div class="cuteapps">
-                  <i class="las la-envelope"></i>
-                  <p>Protonmail</p>
-                </div></a
-              >
-              <a href="https://warez.now.sh/">
-                <div class="cuteapps">
-                  <i class="las la-skull-crossbones"></i>
-                  <p>Warezz</p>
-                </div></a
-              >
-              <a href="https://www.producthunt.com/">
-                <div class="cuteapps">
-                  <i class="lab la-product-hunt"></i>
-                  <p>Product Hunt</p>
-                </div></a
-              >
-              <a href="https://spotify.com">
-                <div class="cuteapps">
-                  <i class="lab la-spotify"></i>
-                  <p>Spotify webplayer</p>
-                </div></a
-              >
-              <a href="https://www.pinterest.com/">
-                <div class="cuteapps">
-                  <i class="lab la-pinterest"></i>
-                  <p>Pinterest</p>
-                </div></a
-              >
-              <a href="https://unsplash.com">
-                <div class="cuteapps">
-                  <i class="las la-image"></i>
-                  <p>Unsplash</p>
-                </div></a
-              >
-              <a href="https://wikipedia.com">
-                <div class="cuteapps">
-                  <i class="lab la-wikipedia-w"></i>
-                  <p>Wikipedia</p>
-                </div></a
-              >
-              <a href="https://web.whatsapp.com">
-                <div class="cuteapps">
-                  <i class="lab la-whatsapp"></i>
-                  <p>WhatsApp</p>
-                </div></a
-              >
-              <a href="https://raindrop.io">
-                <div class="cuteapps">
-                  <i class="las la-cloud-rain"></i>
-                  <p>Raindrop</p>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Javascript -->
+      <!-- All the javascript needed to make saturn's core features work  -->
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/search.js"></script>
-      <script type="text/javascript" src="js/custom.js"></script>
       <script type="text/javascript" src="js/favorites.js"></script>
+      <script type="text/javascript" src="js/render.js"></script>
+      <script type="text/javascript" src="js/custom.js"></script>
     </main>
   </body>
 </html>

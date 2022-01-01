@@ -27,13 +27,13 @@ body {
   font-weight: 500;
   box-sizing: border-box;
   outline: none;
-  border: 3px solid var(--sat-bg);
+  border: 3px solid var(--sat-bg-borders);
   border-radius: 20px;
 }
 
 /* 
 ========
-+ The logo inside search engnie logo +
++ The logo inside search engine logo +
 ========
 */
 .search-engine-logo {
@@ -116,7 +116,7 @@ body {
 */
 
 .modal {
-  background-color: #15181f8a;
+  background-color: #15181f42;
   position: fixed;
   left: 0;
   top: 0;
@@ -125,7 +125,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: scale(1.2);
-  transition: visibility 0s linear 100ms, opacity 100ms 0s, transform 100ms;
+  transition: visibility 0s linear 30ms, opacity 30ms 0s, transform 30ms;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
@@ -137,9 +137,11 @@ body {
   transform: translate(-50%, -50%);
   padding: 5px 15px;
   padding-bottom: 20px;
-  width: 60rem;
+  width: 77rem;
   height: 35rem;
   overflow-y: scroll;
+  border-radius: 20px;
+  overflow-y: auto;
 }
 
 .show-modal {
@@ -170,30 +172,31 @@ body {
 }
 .slider:hover {
   transition: var(--transition-speed-default);
-  border: 2px solid var(--sat-accent-color1);
+  border: 1px solid var(--sat-accent-color1);
 }
 
 .slider {
-  background-color: var(--switch-color-bg);
+  background-color: var(--switch-color-bg-new);
   left: 1px;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  border: 2px solid var(--sat-setting-bg-effect);
+  border: 1px solid var(--switch-color-bg-new);
 }
 
 .slider:before {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   content: "";
   left: 5px;
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
   padding: 12px 12px;
 }
 
 input:checked + .slider {
   background: var(--sat-accent-color1);
+  border: 1px solid var(--sat-accent-color1);
 }
 
 input:checked + .slider:before {
@@ -210,23 +213,23 @@ input:checked + .slider:before {
 
 .section-title {
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .setting-button {
   outline: none;
-  padding: 10px 10px;
-  border-radius: 12px;
+  padding: 12px 10px;
+  border-radius: 16px !important;
   float: right;
-  outline: 2px solid var(--sat-bg);
+  border: 4px solid var(--sat-bg-borders);
 }
 .setting-button i {
   font-size: 1.2rem;
 }
 
 .setting-button:hover {
-  transition: var(--transition-speed-default);
-  outline: 3px solid var(--settings-button-outline);
+  transition: var(--transition-speed-fast);
+  border: 4px solid var(--settings-button-outline);
 }
 
 /* 
@@ -237,17 +240,15 @@ input:checked + .slider:before {
 
 ul.tabs li {
   font-weight: 500;
-  background: none;
   color: var(--sat-ids);
   padding: 12px 20px;
-  margin: 10px;
+  margin: 5px;
   border-radius: var(--sat-border-radius);
 }
 
 ul.tabs li:hover {
   color: var(--sat-ids);
   background: var(--sat-setting-bg-effect);
-  transition: 90ms;
   box-shadow: 1px 16px 25px 1px var(--drop-shadow-color);
 }
 
@@ -258,8 +259,17 @@ ul.tabs li.current {
   box-shadow: 1px 16px 25px 1px var(--drop-shadow-color);
 }
 
+ul.tabs li.current i {
+  transition: var(--transition-speed-default);
+  font-size: 17px;
+  background-color: var(--lighter-color);
+  padding: 4px;
+  border-radius: 10px;
+  color: var(--sat-accent-color1);
+}
+
 ul.tabs li {
-  font-size: 15px;
+  font-size: 17px;
 }
 .tab-content {
   display: none;
@@ -324,232 +334,22 @@ ul.tabs li {
   bottom: 108%;
 }
 
-/* 
-========
-+ Show tooltip on app hover +
-========
-*/
-
-/* .app:hover span {
-  visibility: visible;
-  transition: var(--transition-speed-fast);
-} */
-
-/* 
-========
-+ More apps +
-========
-*/
-
-.morecontainer {
-  margin: 0 auto;
-  padding: 26px 4px;
+.app-content {
+  animation: fadeIn 0.2s ease;
 }
 
-#cutieapps {
-  margin-top: 30px;
-}
-
-.cuteapps {
-  display: inline-block;
-  width: 12%;
-  margin: 0 0.5% 19px;
-  padding: 4px 20px;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.cuteapps i {
-  font-size: 2.6em;
-  margin-top: 10px;
-}
-
-.cuteapps p {
-  font-size: 16px;
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-/* 
-========
-+ Overlay for more apps +
-========
-*/
-
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-y: scroll;
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 15px;
-  right: 45px;
-  font-size: 40px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay {
-    overflow-y: auto;
-  }
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-/* 
-========
-+ Favorites +
-========
-*/
-
-#favorite-links:hover {
-  transition: var(--transition-speed-default);
-}
-ul {
-  padding: 0;
-  margin: 0px;
-}
-
-ul li {
-  margin: 0;
-  list-style: none;
-}
-
-.removebtn {
-  border: none;
-  background: none;
-  float: right;
-  margin-top: -5px;
-  padding: 8px;
-  border-radius: 13px;
-}
-
-#content {
-  padding: 10px;
-}
-
-#fav-link li {
-  padding: 10px;
-}
-#fav-link li:last-child {
-  border: none;
-}
-
-/* 
-========
-+ Optimizations for favorites features.
-Currently only images are fully supported. +
-========
-*/
-
-#fav-link img {
-  width: 23px;
-  height: 22px;
-  outline: none;
-  vertical-align: middle;
-  margin: 0px;
-  border-radius: 6px !important;
-}
-#fav-link a {
-  text-decoration: none;
-  padding: 10px 10px;
-  margin: -10px;
-  color: var(--sat-ids);
-}
-
-#add-link-form {
+.app-content {
   display: none;
-  padding: 20px;
-  margin: 5px;
 }
 
-#add-link-form input {
-  color: var(--sat-ids);
-  margin: 10px 0;
-  padding: 10px;
-  width: 50%;
-  outline: none;
-  border: 2px solid var(--add-link-border);
-  font-size: 14px;
-  outline: 3px solid var(--sat-search-shortcuts);
-}
-#add-link-form input:hover {
-  outline: 3px solid var(--sat-search-bar-hvr);
-  transition: var(--transition-speed-default);
+.app-content h4 i {
+  color: var(--sat-accent-color1);
 }
 
-#add-link-form input:focus {
-  outline: 3px solid var(--sat-search-bar-hvr);
-  transition: var(--transition-speed-default);
+.app-content.current {
+  display: inherit;
 }
 
-#new-link-button button,
-#add-link-form button {
-  display: block;
-  margin-right: 0;
-  margin-left: 0;
-  padding: 10px;
-  margin-top: 30px;
-  font-size: 0.9em;
-  font-weight: 400;
-  width: 100%;
-  color: var(--sat-ids);
-  background: var(--sat-search-shortcuts);
-}
-
-#new-link-button button:hover,
-#add-link-form button:hover {
-  background-color: var(--favorites-hover);
-  transition: var(--transition-speed-default);
-  color: var(--sat-ids);
-}
-
-.close-button {
-  font-size: 24px;
-  float: right;
-  padding: 10px 10px;
-  margin: 10px;
-  border-radius: 60px;
-}
-
-.new-close-fav,
-.close-button i {
-  display: block;
-  text-align: center;
-}
-
-.close-button:hover,
-.new-close-fav:hover {
-  color: var(--sat-ids);
-  background-color: var(--favorites-hover);
-  transition: var(--transition-speed-default);
-}
-
-.new-close-fav {
-  font-size: 24px;
-  float: right;
-  padding: 5px 10px;
-  border-radius: 60px;
-}
 /* 
 ========
 + The IOS 15 like background in settings. +
@@ -570,23 +370,33 @@ Currently only images are fully supported. +
 
 /* 
 ========
-+ Theme Icons (YES, they are just small svg images that i make in figma.) +
++ Theme Icons (YES, they are just small png images that i make in figma.) +
 ========
 */
 
 .theme-icon img {
-  width: 160px;
-  padding: 4px;
+  width: 150px;
+  height: 75px;
+  padding: 3px;
   margin: 2px;
   border-radius: 20px;
-  animation: slide-up-fade-in 0.3s ease;
+  position: relative;
 }
 
 .theme-icon img:hover {
   transition: var(--transition-speed-default);
   background-color: var(--sat-accent-color1);
+  top: -4px;
 }
 
+.theme-title {
+  font-weight: 500;
+  margin: 5px;
+}
+
+.theme-title i {
+  color: var(--sat-accent-color1);
+}
 /* 
 ========
 + Mobile optimizations +
@@ -598,6 +408,10 @@ Currently only images are fully supported. +
     width: 90%;
     height: 75%;
   }
+  ul.tabs li {
+    padding: 7px 7px;
+  }
+
   .cuteapps p {
     font-size: 10px;
   }
@@ -614,16 +428,24 @@ Currently only images are fully supported. +
 */
 
 .save-button {
-  padding: 9px 20px;
+  padding: 12px 11px;
   outline: none;
   background: var(--lighter-color);
   color: var(--sat-ids);
-  font-weight: 600;
+  font-weight: 410;
+  border: 1px solid var(--lighter-color);
 }
 
 .save-button:hover {
   background-color: var(--sat-input-hover);
   transition: var(--transition-speed-default);
+  border: 1px solid var(--sat-accent-color1);
+}
+
+.cancel-fav-btn {
+  padding: 12px 11px;
+  outline: none;
+  color: var(--sat-ids);
 }
 
 .saved-msg {
@@ -636,18 +458,21 @@ Currently only images are fully supported. +
 ========
 */
 
-.typewritter_1 {
-  font-weight: 600;
-}
-
-#sv-msg {
+#sv-msg,
+#sv-msg2 {
   font-weight: 600;
   font-size: 12px;
 }
 
+#sv-msg2 {
+  font-size: 14px;
+}
+
 .username-section input {
   background-color: var(--lighter-color);
-  border: 1px solid var(--new-search-bg-hover-effect);
+  padding: 13px 10px !important;
+  font-size: 15px;
+  border: 2px solid var(--sat-setting-bg-effect);
 }
 
 .username-section input:focus {
@@ -686,28 +511,288 @@ Currently only images are fully supported. +
 
 /* 
 ========
-+ *NEW* Favorites search feature +
++ Favorites search feature +
 ========
 */
 
 .favorites-search input {
   background: var(--sat-search-shortcuts);
-  padding: 12px;
-  width: 32%;
-  border: 1px solid var(--sat-bg);
+  padding: 13px 10px;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .favorites-search input:hover,
 .favorites-search input:focus {
+  transition: var(--transition-speed-default);
   background-color: var(--sat-search-bar-focus);
-  border: 1px solid var(--new-search-bg-hover-effect);
 }
 
-/* Favorites support for images, gifs and more.. */
+.cuteapps:hover {
+  color: var(--for-white); /* force white to fix issues */
+}
+
+/* 
+========
++ Apps List Category +
+========
+*/
+
+.apps-category {
+  margin-top: 20px;
+}
+ul.apps-category {
+  padding: 0px;
+  list-style: none;
+}
+
+ul.apps-category li,
+.more-apps {
+  font-weight: 500;
+  background: none;
+  color: var(--lighter-text-color);
+  display: inline-block;
+  padding: 6px 9px;
+  cursor: pointer;
+  border-radius: var(--sat-border-radius);
+  border: 2px solid var(--sat-bg);
+}
+
+ul.apps-category li:hover,
+.more-apps:hover {
+  background: var(--sat-search-shortcuts);
+  color: var(--sat-ids);
+  transition: var(--transition-speed-fast);
+  box-shadow: 1px 16px 25px 1px var(--drop-shadow-color);
+  font-weight: 600;
+}
+
+ul.apps-category li.current {
+  background-color: var(--sat-search-shortcuts);
+  color: var(--sat-accent-color1);
+  font-weight: 600;
+  box-shadow: 1px 16px 25px 1px var(--drop-shadow-color);
+}
+
+/* 
+========
++ Tabs (Settings navigation) +
+========
+*/
+.tabs {
+  font-size: 15px;
+  margin: 5px;
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 75px;
+  border-radius: var(--sat-border-radius);
+}
+
+.tab-content {
+  margin-left: 190px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+/* 
+========
++ New About section - simple center +
+========
+*/
+
+.aboutwidgets,
+.new-about,
+.new-about img {
+  text-align: center;
+  font-weight: 500;
+}
+.socials .app {
+  border: 1px solid var(--lighter-color);
+}
+
+/* 
+========
++ Favorite Modal +
+========
+*/
+.favModal {
+  background-color: #0a0a0abd;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 200ms ease;
+}
+
+/* Favorite modal Content/Box */
+.fav-content {
+  background-color: var(--sat-setting-bg-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 15px;
+  padding-bottom: 20px;
+  width: 38rem;
+  height: 31rem;
+  overflow-y: scroll;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+/* 
+========
++ Optimizations for favorites features.
+Currently only images and iframes are fully supported. +
+========
+*/
+
+/* Improved image support so now they act as icons */
 #fav-link img {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 22px;
   outline: none;
   vertical-align: middle;
   margin: 0px;
+  border-radius: 6px !important;
+}
+/* Improved iframe support so now they fit properly inside the container */
+#fav-link iframe {
+  width: 90%;
+  height: 30%;
+  outline: none;
+  vertical-align: middle;
+  margin: 0px;
+  border: 1px;
+  border-radius: 6px !important;
+}
+
+#fav-link a {
+  text-decoration: none;
+  padding: 10px 10px;
+  margin: -10px;
+  color: var(--sat-ids);
+}
+
+/* 
+========
++ Favorites V3. +
+========
+*/
+
+#favorite-links:hover {
+  transition: var(--transition-speed-default);
+}
+
+ul {
+  padding: 0;
+  margin: 0px;
+}
+
+ul li {
+  margin: 0;
+  list-style: none;
+}
+
+.removebtn {
+  border: none;
+  background: none;
+  float: right;
+  margin-top: -5px;
+  padding: 8px;
+  border-radius: 13px;
+}
+
+#content {
+  padding: 10px;
+  overflow: hidden;
+}
+
+#fav-link li {
+  padding: 10px;
+}
+#fav-link li:last-child {
+  border: none;
+}
+
+.favModal input {
+  width: 100%;
+  color: var(--sat-ids);
+  margin: 5px 0;
+  padding: 13px 13px 13px 13px;
+  outline: none;
+  border: 2px solid var(--add-link-border);
+  font-size: 14px;
+  border-radius: var(--sat-border-radius);
+}
+
+.favModal input:hover,
+.favModal input:focus {
+  background-color: var(--none);
+  border: 2px solid var(--sat-accent-color1);
+}
+/* Large add favorite button */
+
+.fav-btn button {
+  display: block;
+  padding: 13px;
+  margin-top: 30px;
+  font-size: 0.9em;
+  font-weight: 450;
+  color: var(--sat-ids);
+  background: var(--lighter-color);
+  border: 1px solid var(--lighter-color);
+  width: 100%;
+}
+
+.fav-btn button:hover {
+  border: 1px solid var(--sat-accent-color1);
+}
+
+/* Every close button uses this */
+
+.close-button {
+  font-size: 25px;
+  float: right;
+  padding: 10px 10px;
+  margin: 10px;
+  border-radius: 100px;
+}
+
+.close-button i {
+  display: block;
+  text-align: center;
+}
+
+.close-button:hover {
+  color: var(--sat-ids);
+  background-color: var(--favorites-hover);
+  transition: var(--transition-speed-default);
+}
+
+/* Header inside Favorites */
+.fav-title {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Favorites input title */
+.fav_title {
+  font-weight: 450;
+  font-size: 15px;
+}
+
+/* Hiding the background color for cancel button */
+
+.cancel-fav-btn {
+  background-color: var(--sat-setting-bg-color);
 }
